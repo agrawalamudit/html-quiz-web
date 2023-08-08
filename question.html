@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <button class="que-btn" onclick="foo()">
+            Start Quiz
+        </button>
+        <p id="paragraph"></p>
+    </div>
+</body>
+<script>
+    let que=[
+        {
+            question:"2+2+1"
+        },
+        {
+            question:"2+2+2"
+        },
+        {
+            question:"2+2+3"
+        },
+        {
+            question:"2+2+4"
+        }
+    ]
+    let i;
+    let count=1;
+    function foo()
+    {
+        
+        document.getElementById("paragraph").innerText = que[0].question;
+        i=setInterval(func,1000);
+    }
+
+    function func()
+    {
+
+        var d= document.getElementById("paragraph");
+        d.innerText=que[count].question;
+
+        if(count == 3)
+        {
+            clearInterval(i);
+        }
+        count++;
+    }
+
+
+</script>
+</html>
